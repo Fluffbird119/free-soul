@@ -16,10 +16,32 @@ public class audioScript : MonoBehaviour
     public AudioClip menuSelectNoise;
     public AudioClip restartLevel;
 
+    [SerializeField] private bool startedMusic = false;
+
+    public audioScript Instance { get; private set; }
+
+    private void Awake()
+    {
+        // Keep this object alive across scenes
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicates
+        }
+    }
+
     private void Start()
     {
-        musicSource.clip = backgroundMusic;
-        musicSource.Play();
+        if (startedMusic == false)
+        {
+            musicSource.clip = backgroundMusic;
+            musicSource.Play();
+            startedMusic = true;
+        }
     }
 
     public void PlaySFX(AudioClip clip)

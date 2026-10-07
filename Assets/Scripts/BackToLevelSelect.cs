@@ -14,8 +14,7 @@ public class BackToLevelSelect : MonoBehaviour
 
     public void OnBackToLevelSelect()
     {
-        SceneManager.LoadSceneAsync(7);
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
         audioManager.PlaySFX(audioManager.menuSelectNoise);
     }
 }

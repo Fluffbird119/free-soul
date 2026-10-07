@@ -19,15 +19,13 @@ public class LevelCommands : MonoBehaviour
         {
             audioManager.PlaySFX(audioManager.restartLevel);
 
-            SceneManager.LoadSceneAsync(7);
-            SceneManager.LoadSceneAsync(level + 1, LoadSceneMode.Additive);
+            SceneManager.LoadScene(level + 1, LoadSceneMode.Single);
         }
         else if (Input.GetKey(KeyCode.Q))
         {
             audioManager.PlaySFX(audioManager.menuSelectNoise);
 
-            SceneManager.LoadSceneAsync(7);
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }
 }

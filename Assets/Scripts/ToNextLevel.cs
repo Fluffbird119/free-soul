@@ -14,8 +14,7 @@ public class ToNextLevel : MonoBehaviour
 
     public void OnNextLevel(int curlevel)
     {
-        SceneManager.LoadSceneAsync(7);
-        SceneManager.LoadSceneAsync(curlevel + 1, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(curlevel + 1, LoadSceneMode.Single);
         audioManager.PlaySFX(audioManager.menuSelectNoise);
     }
 }

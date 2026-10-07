@@ -9,9 +9,7 @@ public class StartMenu : MonoBehaviour
     
     public void OnPlayButton()
     {
-        
-        SceneManager.LoadSceneAsync(7);
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
     public void OnQuitButton()
     {
